@@ -5,10 +5,11 @@ server = smtplib.SMTP_SSL('smtp.yandex.ru:465')
 email_from = 'alex.chisnikov@yandex.ru'
 email_to = 'chisnikoff@mail.ru'
 title = '''\
-From: alex.chisnikov@yandex.ru
-To: chisnikoff@mail.ru
+From: {e_fr}
+To: {e_to}
 Subject: Приглашение!
 Content-Type: text/plain; charset="UTF-8";\n'''
+title = title.format(e_fr=email_from, e_to=email_to)
 text = '''
 Привет, %friend_name%! %my_name% приглашает тебя на сайт %website%!
 
